@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	box-sizing: border-box;
+	/* font-family: "Public Sans", sans-serif; */
+}
+
+body {
+	font-weight: 600;
+	@apply tracking-wide;
+}
+:root {
+	--c-theme: 188, 52, 220;
+	--c-bg-pri: 22, 28, 36;
+	--c-bg-sec: 33, 43, 54;
+	--c-txt-pri: 255, 255, 255;
+	--c-txt-sec: 145, 158, 171;
+}
+.scrollbar-styled {
+	@apply transition-all duration-200;
+
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent;
+
+	&:hover {
+		scrollbar-color: rgba(var(--c-txt-pri), 0.2) transparent;
+	}
+	&:hover::-webkit-scrollbar-thumb {
+		background-color: rgba(var(--c-txt-pri), 0.2);
+	}
+}
+.scrollbar-styled::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+.scrollbar-styled::-webkit-scrollbar-track,
+.scrollbar-styled::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+.scrollbar-styled::-webkit-scrollbar-track,
+.scrollbar-styled::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+}
+
+.scroll-hidden {
+	-ms-overflow-style: none; /* for Internet Explorer, Edge */
+	scrollbar-width: none; /* for Firefox */
+	overflow-y: scroll;
+}
+.scroll-hidden::-webkit-scrollbar {
+	display: none; /* for Chrome, Safari, and Opera */
+}
+
+.slide-right {
+	animation: slideright 300ms ease 1;
+	animation-fill-mode: both;
+}
+@keyframes slideright {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.fc_xy {
+	@apply flex items-center justify-center;
+}
+.fc_y {
+	@apply flex justify-center;
+}
+.fc_x {
+	@apply flex items-center;
+}
+.bc_x {
+	@apply active:!translate-y-[2px] active:opacity-40;
+}
+
+.sidebar_link_active .sidebar_icon {
+	@apply rotate-90 transition text-tp;
+}
+.sidebar_link_active .sidebar_link {
+	@apply bg-bs/70 text-tp;
+}
