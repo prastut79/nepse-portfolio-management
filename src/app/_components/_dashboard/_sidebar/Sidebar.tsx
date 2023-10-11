@@ -7,7 +7,7 @@ import Accordion from "@app/_components/_atoms/Accordion";
 import { SidebarLinkButton } from "./SidebarLinkButton";
 import SidebarSubLink from "./SidebarSubLink";
 
-import Drawer from "@app/_components/_atoms/Drawer/Drawer";
+import Drawer from "@app/_components/_atoms/drawer/Drawer";
 import dynamic from "next/dynamic";
 import SiteLogo from "./SiteLogo";
 
@@ -31,6 +31,7 @@ export default function Sidebar() {
 									{sidebar.label}
 								</p>
 							}
+							isOpen={true}
 						>
 							<div className="grid w-full gap-1 py-3 text-sm">
 								{sidebar.links.map((link, j) => (
@@ -38,11 +39,8 @@ export default function Sidebar() {
 										{link.subLinks ? (
 											<SidebarSubLink {...link} />
 										) : (
-											<Link href={link.to!}>
-												<SidebarLinkButton
-													label={link.label}
-													Icon={link.Icon}
-												/>
+											<Link href={link.href!}>
+												<SidebarLinkButton {...link} />
 											</Link>
 										)}
 									</React.Fragment>

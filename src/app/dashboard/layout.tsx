@@ -4,13 +4,11 @@ import Navbar from "@app/_components/_navbar/Navbar";
 
 export default function Layout({ children }: PropsWithChildren<any>) {
 	return (
-		<div className="flex relative">
+		<div className="flex h-full">
 			<Sidebar />
-			<main className="flex-1">
+			<main className="flex-1 h-full">
 				<Navbar />
-				<div className="px-8 pt-24 pb-6 w-full min-h-screen">
-					{children}
-				</div>
+				<div className="px-4 pt-20 pb-6 w-full h-full">{children}</div>
 			</main>
 		</div>
 	);

@@ -16,7 +16,7 @@ export default function SidebarMenu({
 	return createPortal(
 		<button
 			onClick={() => setIsOpen(true)}
-			className="text-ts hover:text-tp bc_x 2lg:hidden"
+			className="text-ts hover:text-tp bc_x"
 		>
 			<HiMenuAlt3 size={18} />
 		</button>,

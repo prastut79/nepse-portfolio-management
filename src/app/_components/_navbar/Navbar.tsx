@@ -7,7 +7,7 @@ export default function Navbar() {
 	return (
 		<header className="fixed w-full 2lg:w-[calc(100%_-_281px)] top-0 h-16  right-0 justify-between px-8 py-6  backdrop-blur-sm bg-bp/80 fc_x">
 			<div className="fc_x gap-x-3">
-				<div id={SIDEBAR_MENU_ID} />
+				<div id={SIDEBAR_MENU_ID} className="2lg:hidden" />
 				<button className="text-ts bc_x">
 					<BiSearch size={20} />
 				</button>

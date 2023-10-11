@@ -6,13 +6,28 @@
 	box-sizing: border-box;
 	/* font-family: "Public Sans", sans-serif; */
 }
-
+html,
 body {
-	font-weight: 600;
+	height: 100%;
+	width: 100%;
+}
+body {
 	@apply tracking-wide;
+	overflow: auto;
+
+	font-weight: 600;
 }
 :root {
-	--c-theme: 188, 52, 220;
+	--c-green: 0, 167, 111; /*green*/
+	--c-lblue: 7, 141, 238; /*lblue*/
+	--c-dblue: 32, 101, 209; /*dblue*/
+	--c-yellow: 253, 169, 45; /*yellow*/
+	--c-purple: 188, 52, 220; /*Purple*/
+	--c-red: 255, 48, 48; /*red*/
+
+	--c-bg-theme: 0, 167, 111; /*gren*/
+	--c-txt-theme: 91, 228, 155; /*green*/
+
 	--c-bg-pri: 22, 28, 36;
 	--c-bg-sec: 33, 43, 54;
 	--c-txt-pri: 255, 255, 255;
@@ -24,13 +39,12 @@ body {
 	overflow: auto;
 	scrollbar-width: thin;
 	scrollbar-color: transparent transparent;
-
-	&:hover {
-		scrollbar-color: rgba(var(--c-txt-pri), 0.2) transparent;
-	}
-	&:hover::-webkit-scrollbar-thumb {
-		background-color: rgba(var(--c-txt-pri), 0.2);
-	}
+}
+.scrollbar-styled:hover {
+	scrollbar-color: rgba(var(--c-txt-pri), 0.2) transparent;
+}
+.scrollbar-styled:hover::-webkit-scrollbar-thumb {
+	background-color: rgba(var(--c-txt-pri), 0.2);
 }
 .scrollbar-styled::-webkit-scrollbar {
 	width: 6px;

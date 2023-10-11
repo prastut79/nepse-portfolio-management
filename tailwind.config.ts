@@ -9,7 +9,8 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
-				theme: "rgba(var(--c-theme), <alpha-value>)",
+				theme: "rgba(var(--c-bg-theme), <alpha-value>)",
+				ltheme: "rgba(var(--c-txt-theme), <alpha-value>)",
 
 				tp: "rgba(var(--c-txt-pri), <alpha-value>)",
 				ts: "rgba(var(--c-txt-sec), <alpha-value>)",
@@ -23,8 +24,11 @@ const config: Config = {
 			screens: {
 				"2lg": "1200px",
 			},
+			lineHeight: {
+				"0": "0",
+			},
 		},
 	},
-	plugins: [],
+	plugins: [require("tailwindcss"), require("autoprefixer")],
 };
 export default config;

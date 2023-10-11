@@ -6,16 +6,16 @@ import { IconType } from "react-icons";
 export default function Accordion({
 	children,
 	label,
-	isExpand = true,
+	isOpen = false,
 	expandClass = "accordion__active",
 	Icon,
 }: PropsWithChildren<{
 	label: React.ReactNode;
 	Icon?: React.ReactNode;
 	expandClass?: string;
-	isExpand?: boolean;
+	isOpen?: boolean;
 }>) {
-	const [expand, setExpand] = useState(isExpand);
+	const [expand, setExpand] = useState(isOpen);
 
 	return (
 		<div className={expand ? expandClass : ""}>
