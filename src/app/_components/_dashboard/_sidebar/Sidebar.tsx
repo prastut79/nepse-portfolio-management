@@ -56,9 +56,10 @@ export default function Sidebar() {
 
 	return (
 		<section>
-			<nav className="dashboard_sidebar w-[280px] border-r border-dashed h-screen sticky top-0 scrollbar-styled border-ts/20 hidden 2lg:block">
+			<nav className="dashboard_sidebar w-[280px] border-r border-dashed h-full fixed top-0 scrollbar-styled border-ts/20 hidden 2lg:block">
 				{SideBarButtons}
 			</nav>
+			<div className="w-[280px] max-2lg:hidden" />
 			<div className="block 2lg:hidden">
 				<Drawer isOpen={isOpen} onClose={() => setIsOpen(false)}>
 					<nav className="dashboard_sidebar w-[280px] h-screen border-tp/20">

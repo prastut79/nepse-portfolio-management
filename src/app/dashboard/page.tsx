@@ -4,6 +4,7 @@ import { P_DASHBOARD, P_USER } from "@config/siteConfig";
 import Loading from "./loading";
 
 export default function Page() {
+	// return <Loading />;
 	return (
 		<DashWrapper {...P_DASHBOARD} breadcrumbs={[]}>
 			<div>Page</div>

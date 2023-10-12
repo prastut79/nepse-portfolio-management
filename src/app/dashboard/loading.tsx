@@ -1,4 +1,4 @@
-import LoadingBar from "@app/_components/_atoms/loading-bar/loadingBar";
+import LoadingBar from "@app/_components/_atoms/loading-bar/LoadingBar";
 
 export default function Loading() {
 	return (

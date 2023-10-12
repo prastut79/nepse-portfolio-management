@@ -2,8 +2,8 @@ import { Schema, model, models } from "mongoose";
 
 const StockSchema = new Schema(
 	{
-		symbol: { type: String, required: true },
-		label: { type: String, required: true },
+		short: { type: String, required: true, unique: true },
+		name: { type: String, required: true },
 	},
 	{ timestamps: true }
 );

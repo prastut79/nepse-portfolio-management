@@ -14,3 +14,8 @@ export enum TRANSACTION_ENUM {
 	AUCTION = "auction",
 	DIVIDEND = "dividend",
 }
+
+export const TRANSACTION_TYPE = Object.values(TRANSACTION_ENUM).map((d) => ({
+	label: d.toUpperCase(),
+	value: d,
+}));

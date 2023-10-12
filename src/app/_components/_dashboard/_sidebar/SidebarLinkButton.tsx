@@ -19,7 +19,7 @@ export function SidebarLinkButton({
 	return (
 		<div
 			className={`sidebar_link px-3 py-[10px] rounded transition fc_x gap-4  ${
-				isActive ? "!bg-theme/[.08] !text-ltheme" : "hover:bg-bs"
+				isActive ? "!bg-theme/[.08] !text-theme" : "hover:bg-bs"
 			}`}
 		>
 			<Icon size={24} />

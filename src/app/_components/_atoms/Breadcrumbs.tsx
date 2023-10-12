@@ -11,7 +11,7 @@ export interface BreadcrumbsType {
 
 export default function Breadcrumbs({ data }: BreadcrumbsType) {
 	return (
-		<div className="text-sm text-ts font-normal">
+		<div className="text-xs text-ts font-normal">
 			{data?.slice(0, -1).map(({ label, href }, i) => (
 				<Link href={href} key={i}>
 					{!!i && <BreadcrumbIcon />}
@@ -25,5 +25,5 @@ export default function Breadcrumbs({ data }: BreadcrumbsType) {
 }
 
 function BreadcrumbIcon() {
-	return <span className="px-4 leading-0 ">&bull;</span>;
+	return <span className="px-2 leading-0 ">/</span>;
 }
