@@ -29,7 +29,7 @@ export function SidebarLinkButton({
 }
 
 export function SidebarSubLinkButton({ label, href }: SidebarSubLinkType) {
-	const isActive = usePathname().startsWith(href);
+	const isActive = usePathname() === href;
 	return (
 		<Link href={href}>
 			<div
@@ -38,8 +38,8 @@ export function SidebarSubLinkButton({ label, href }: SidebarSubLinkType) {
 				}`}
 			>
 				<span
-					className={`w-6 fc_y mb-1 leading-0 ${
-						isActive ? "text-3xl " : "text-base "
+					className={`w-6 fc_y  leading-0 ${
+						isActive ? "text-3xl mb-[2px]" : "text-base "
 					}`}
 				>
 					&bull;

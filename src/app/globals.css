@@ -39,6 +39,9 @@ html[data-theme="dark"] {
 	--c-txt-pri: 255, 255, 255;
 	--c-txt-sec: 145, 158, 171;
 }
+*::disabled {
+	@apply cursor-not-allowed;
+}
 .scrollbar-styled {
 	@apply transition-all duration-200;
 
@@ -107,4 +110,14 @@ html[data-theme="dark"] {
 }
 .sidebar_link_active .sidebar_link {
 	@apply bg-bs/70 text-tp;
+}
+
+.Toastify .Toastify__toast {
+	@apply min-h-[52px] font-public_sans font-bold text-tp bg-bp text-sm  mb-3 !shadow-md shadow-bp border border-bs/50;
+}
+.Toastify .Toastify__toast--error {
+	@apply text-red-500;
+}
+.Toastify .Toastify__toast--success {
+	@apply text-green-500;
 }

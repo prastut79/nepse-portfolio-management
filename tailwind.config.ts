@@ -27,6 +27,9 @@ const config: Config = {
 			lineHeight: {
 				"0": "0",
 			},
+			fontFamily: {
+				public_sans: "var(--font-public-sans)",
+			},
 		},
 	},
 	plugins: [require("tailwindcss"), require("autoprefixer")],

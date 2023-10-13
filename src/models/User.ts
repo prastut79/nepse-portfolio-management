@@ -20,6 +20,8 @@ const UserSchema = new Schema(
 			enum: Object.values(USER_ROLES),
 			default: USER_ROLES.USER,
 		},
+		image: String,
+
 		isBlocked: Boolean,
 		isResetPassword: Boolean,
 	},

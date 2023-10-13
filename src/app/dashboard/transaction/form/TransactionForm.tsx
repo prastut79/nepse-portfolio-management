@@ -4,22 +4,32 @@ import Chooseable from "@app/_components/_atoms/Chooseable";
 import Input from "@app/_components/_atoms/Input";
 import NativeSelect, { NativeOption } from "@app/_components/_atoms/Select";
 import { TRANSACTION_ENUM, TRANSACTION_TYPE } from "@models/enums";
-import { TransactionType } from "@schema/transactionSchema";
+import transactionSchema, { TransactionType } from "@schema/transactionSchema";
 import {
 	useForm,
 	Controller,
 	Control,
 	useWatch,
 	UseFormRegister,
+	FieldErrors,
 } from "react-hook-form";
 import BuyTransactionForm from "./BuyTransactionForm";
 import Button from "@app/_components/_atoms/Button";
+import StockSelect from "@app/_components/_dashboard/_StockSelect/StockSelect";
 
-export default function TransactionForm() {
-	const { control, register } = useForm<TransactionType>({});
+export default function TransactionForm({
+	value,
+	onSubmit,
+}: {
+	value?: TransactionType;
+	onSubmit: (data: TransactionType) => any;
+}) {
+	const { control, register, handleSubmit } = useForm<TransactionType>({
+		defaultValues: value,
+	});
 
 	return (
-		<form>
+		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className="pb-12">
 				<h5 className="text-ts text-sm pb-4">
 					Select Transaction Type
@@ -32,17 +42,15 @@ export default function TransactionForm() {
 							selected={value}
 							onChange={onChange}
 							data={TRANSACTION_TYPE}
-						></Chooseable>
+						/>
 					)}
 				/>
 			</div>
-			<div className="grid w-full gap-6 bg-bs rounded-lg p-4 ">
+			<div className="grid w-full gap-6 bg-bs rounded-lg py-4 px-6 ">
 				<h5 className="text-ts text-sm ">Transaction Details</h5>
-				<NativeSelect label="Stock" placeholder="Select a Stock">
-					<NativeOption>haha</NativeOption>
-				</NativeSelect>
+				<StockSelect {...register("stock")} />
 				<TransactionFields control={control} register={register} />
-				<div className="">
+				<div>
 					<Button className="float-right">Create</Button>
 				</div>
 			</div>
@@ -61,7 +69,6 @@ function TransactionFields({
 		control,
 		exact: true,
 		name: "type",
-		// defaultValue: { transactions: [{ amount: "", unit: "" }] },
 	});
 
 	if (!transaction) return <></>;
@@ -75,6 +82,8 @@ function TransactionFields({
 				<Input
 					label="Total Amount"
 					type="number"
+					autoFocus
+					required
 					{...register("totalAmount")}
 				/>
 			) : (
@@ -82,11 +91,14 @@ function TransactionFields({
 					<Input
 						label="Total Units"
 						type="number"
+						autoFocus
+						required
 						{...register("totalUnit")}
 					/>
 					<Input
 						label="Price"
 						type="number"
+						required
 						{...register("wacc", { value: "100" })}
 					/>
 				</div>

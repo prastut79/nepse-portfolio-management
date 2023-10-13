@@ -4,10 +4,14 @@ import { TfiDashboard } from "react-icons/tfi";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { TbHanger } from "react-icons/tb";
 import {
+	P_DASHBOARD,
+	P_STOCK,
 	P_TRANSACTION,
 	P_TRANSACTION_ADD,
 	P_TRANSACTION_LIST,
 } from "@config/siteConfig";
+import { RiStockFill } from "react-icons/ri";
+import { AiOutlineStock } from "react-icons/ai";
 
 export interface SidebarButtonGroupType {
 	label: string;
@@ -32,9 +36,9 @@ export const SIDEBAR_BUTTON: SidebarButtonGroupType[] = [
 		label: "OVERVIEW",
 		links: [
 			{
-				label: "App",
-				href: "/dashboard",
-				Icon: TfiDashboard,
+				...P_DASHBOARD,
+				// Icon: TfiDashboard,
+				Icon: AiOutlineStock,
 			},
 		],
 	},
@@ -53,6 +57,7 @@ export const SIDEBAR_BUTTON: SidebarButtonGroupType[] = [
 	{
 		label: "ADMIN",
 		links: [
+			{ ...P_STOCK, Icon: RiStockFill },
 			{
 				label: "User",
 				Icon: BiSolidUserRectangle,

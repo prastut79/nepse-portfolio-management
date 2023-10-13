@@ -3,6 +3,7 @@ import { BiSearch } from "react-icons/bi";
 import { MdDarkMode } from "react-icons/md";
 import { SIDEBAR_MENU_ID } from "../_dashboard/_sidebar/SidebarLinks";
 import ThemeSwitch from "./ThemeSwitch";
+import ProfileImage from "./ProfileImage";
 
 export default function Navbar() {
 	return (
@@ -15,13 +16,7 @@ export default function Navbar() {
 			</div>
 			<div className="fc_x gap-x-3">
 				<ThemeSwitch />
-				<Image
-					src="/static/images/avatar_placeholder.jpg"
-					height={32}
-					width={32}
-					alt="profile-image"
-					className="rounded-full"
-				/>
+				<ProfileImage />
 			</div>
 		</header>
 	);

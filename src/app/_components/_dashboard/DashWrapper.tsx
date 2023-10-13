@@ -6,7 +6,7 @@ import Breadcrumbs, {
 import { SiteConfigType } from "@config/siteConfig";
 
 export interface DashPageDataType extends SiteConfigType {
-	breadcrumbs: BreadcrumbDataType[];
+	breadcrumbs?: BreadcrumbDataType[];
 }
 
 export default function DashWrapper({
@@ -19,9 +19,11 @@ export default function DashWrapper({
 		<div className="md:px-6 min-h-full">
 			<div className="mb-10">
 				<h4 className="text-2xl font-bold text-tp">{label}</h4>
-				<div className="py-2">
-					<Breadcrumbs data={breadcrumbs} />
-				</div>
+				{breadcrumbs && (
+					<div className="py-2">
+						<Breadcrumbs data={breadcrumbs} />
+					</div>
+				)}
 			</div>
 			<div>{children}</div>
 		</div>

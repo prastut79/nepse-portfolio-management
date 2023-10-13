@@ -6,6 +6,8 @@ import Providers from "./_components/Providers";
 // const inter = Inter({ subsets: ["latin"] });
 const sans = Public_Sans({
 	subsets: ["latin"],
+	preload: true,
+	variable: "--font-public-sans",
 });
 export const metadata: Metadata = {
 	title: "Create Next App",

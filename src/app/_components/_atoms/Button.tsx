@@ -14,8 +14,10 @@ export default function Button({
 	return (
 		<button
 			disabled={disabled || loading}
-			className={`fc_xy rounded bg-theme px-5 py-3 text-white font-bold  
-			${loading || disabled ? "gap-x-2" : "bc_x"} ${className ? className : ""}`}
+			className={`fc_xy rounded bg-theme px-5 py-3 text-white  
+			${loading || disabled ? "gap-x-2 opacity-30" : "bc_x"} ${
+				className ? className : ""
+			}`}
 			{...props}
 		>
 			{loading && <LoadingSpinner size="xs" />}

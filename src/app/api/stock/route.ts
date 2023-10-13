@@ -4,6 +4,13 @@ import { NextResponse } from "next/server";
 import Stock from "@models/Stock";
 import stockSchema from "@schema/stockSchema";
 
+export async function GET() {
+	connectDb();
+
+	const stocks = await Stock.find({});
+	return NextResponse.json({ stocks });
+}
+
 export async function POST(req: Request) {
 	try {
 		connectDb();

@@ -1,3 +1,5 @@
+"use client";
+
 import Input from "@app/_components/_atoms/Input";
 import { TransactionType } from "@schema/transactionSchema";
 import React, { useEffect } from "react";
@@ -40,6 +42,8 @@ export default function BuyTransactionForm({
 						type="number"
 						min={0}
 						max={9999999999}
+						autoFocus
+						required
 						{...register(`transactions.${i}.unit`)}
 					/>
 					<Input
@@ -47,6 +51,7 @@ export default function BuyTransactionForm({
 						type="number"
 						min={0}
 						max={49999}
+						required
 						{...register(`transactions.${i}.price`)}
 					/>
 					<button

@@ -8,10 +8,7 @@ import React from "react";
 
 export default function Page() {
 	return (
-		<DashWrapper
-			{...P_TRANSACTION}
-			breadcrumbs={[P_DASHBOARD, P_TRANSACTION, P_TRANSACTION_LIST]}
-		>
+		<DashWrapper {...P_TRANSACTION}>
 			<div></div>
 		</DashWrapper>
 	);

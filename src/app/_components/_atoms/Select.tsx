@@ -33,13 +33,13 @@ const NativeSelect = forwardRef(function NativeSelect(
 			)}
 			<select
 				ref={ref}
-				className={`peer bg-transparent border border-ts/40 focus:border-ts rounded-md color-tp cursor-pointer block w-full py-3 pt-4 px-3 transition ${
+				className={`peer bg-transparent border border-ts/40 focus:border-ts rounded-md color-tp cursor-pointer block w-full py-3 pt-4 px-3 transition !font-public_sans ${
 					className ? className : ""
 				}`}
 				{...props}
 				disabled={loading}
 			>
-				<option disabled hidden selected>
+				<option disabled hidden selected value="">
 					{placeholder}
 				</option>
 				{children}
@@ -55,7 +55,7 @@ export function NativeOption({
 }: PropsWithChildren<HTMLAttributes<HTMLOptionElement>>) {
 	return (
 		<option
-			className={`text-tp text-lg py-2 my-2 bg-bs ${
+			className={`text-tp text-base py-2 my-2 bg-bs !font-public_sans ${
 				className ? className : ""
 			} `}
 			{...props}
